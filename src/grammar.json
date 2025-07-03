@@ -3602,7 +3602,7 @@
     },
     "number": {
       "type": "PREC",
-      "value": 10,
+      "value": 20,
       "content": {
         "type": "TOKEN",
         "content": {
