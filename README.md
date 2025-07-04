@@ -8,6 +8,10 @@
 
 </div>
 
+> [!NOTE]
+> This is an updated fork of <https://github.com/alexmozaidze/tree-sitter-fennel>, every
+> changes will happen here.
+
 The grammar is broken down to *core*, and *extensions*.
 - *core* :: syntax items with no forms support.
 - *extensions* :: support to built-in forms, bindings, destructuring, and other macro-like behaviours.
