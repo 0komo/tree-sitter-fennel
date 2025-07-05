@@ -1444,20 +1444,20 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "name",
-              "content": {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
                 "type": "SYMBOL",
                 "name": "_function_identifier"
+              },
+              {
+                "type": "BLANK"
               }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+            ]
+          }
         },
         {
           "type": "FIELD",
@@ -4001,11 +4001,11 @@
     },
     "symbol_option": {
       "type": "PATTERN",
-      "value": "&[^(){}\\[\\]\"'~;,@`.:\\s]*"
+      "value": "&[^(){}\\[\\]\"'~;,@`.:]*"
     },
     "symbol": {
       "type": "PATTERN",
-      "value": "[^#(){}\\[\\]\"'~;,@`.:\\s][^(){}\\[\\]\"'~;,@`.:\\s]*"
+      "value": "[^#(){}\\[\\]\"'~;,@`.:][^(){}\\[\\]\"'~;,@`.:]+"
     },
     "_multi_symbol_fragment": {
       "type": "ALIAS",

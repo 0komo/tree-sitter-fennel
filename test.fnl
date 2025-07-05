@@ -1,0 +1,4 @@
+(fn []
+  {
+    :fnl/docstring "a"
+  })

@@ -8,6 +8,7 @@ const {
 } = require('../../grammar-lib/dsl.js');
 const {
 	PREC_LAST_RESORT,
+	PREC_IMPORTANT,
 } = require('../../grammar-lib/prec.js');
 
 const rules = {};
@@ -41,15 +42,15 @@ rules['table_metadata'] = $ => table(repeat(item($.table_metadata_pair)));
 rules['_function_inner_body_all'] = $ => seq(
 	field('docstring', alias($.string, $.docstring)),
 	field('metadata', $.table_metadata),
-	repeat1(item($._sexp)),
+	repeat1(item($._sexp))
 );
 rules['_function_inner_body_docstring'] = $ => seq(
 	field('docstring', alias($.string, $.docstring)),
-	repeat1(item($._sexp)),
+	repeat1(item($._sexp))
 );
 rules['_function_inner_body_metadata'] = $ => seq(
 	field('metadata', $.table_metadata),
-	repeat1(item($._sexp)),
+	repeat1(item($._sexp))
 );
 rules['_function_inner_body_generic'] = $ => prec(1, repeat1(item($._sexp)));
 
@@ -61,7 +62,7 @@ rules['_function_inner_body'] = $ => choice(
 );
 
 rules['_function_body'] = $ => seq(
-	optional(field('name', $._function_identifier)),
+	field('name', optional($._function_identifier)),
 	field('args', $.sequence_arguments),
 	optional($._function_inner_body),
 );
