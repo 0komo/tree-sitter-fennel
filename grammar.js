@@ -244,8 +244,8 @@ module.exports = grammar({
 			field('method', $._multi_symbol_fragment),
 		),
 
-		symbol_option: $ => /&[^(){}\[\]"'~;,@`.:]*/,
-		symbol: $ => /[^#(){}\[\]"'~;,@`.:][^(){}\[\]"'~;,@`.:]+/,
+		symbol_option: $ => /&[^(){}\[\]"'~;,@`.:\s]*/,
+		symbol: $ => /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]+/,
 
 		// NOTE: multi-symbol fragments starting from second position onwards have fewer restrictions on what
 		// symbols they may contain, which is why its regex is just a stripped down version of $.symbol.

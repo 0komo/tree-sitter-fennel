@@ -52,7 +52,7 @@ rules['_function_inner_body_metadata'] = $ => seq(
 	field('metadata', $.table_metadata),
 	repeat1(item($._sexp))
 );
-rules['_function_inner_body_generic'] = $ => prec(1, repeat1(item($._sexp)));
+rules['_function_inner_body_generic'] = $ => prec(-1, repeat1(item($._sexp)));
 
 rules['_function_inner_body'] = $ => choice(
 	$._function_inner_body_all,
